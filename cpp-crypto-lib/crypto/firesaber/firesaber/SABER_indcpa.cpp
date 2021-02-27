@@ -5,7 +5,7 @@
 #include "pack_unpack.h"
 #include "poly_mul.h"
 #include "../../isaac/isaac.h"
-#include "fips202.h"
+#include "../../sha3/sha3.h"
 #include "SABER_params.h"
 
 #define h1 (1 << (SABER_EQ - SABER_EP - 1))

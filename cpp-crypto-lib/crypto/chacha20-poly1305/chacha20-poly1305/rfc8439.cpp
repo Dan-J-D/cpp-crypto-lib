@@ -20,11 +20,8 @@
 #    error "Systems without native octals not supported"
 #endif
 
-#define CHACHA20_KEY_SIZE (32)
-#define CHACHA20_NONCE_SIZE (12)
-
 // xor data with a ChaCha20 keystream as per RFC8439
-static PORTABLE_8439_DECL void chacha20_xor_stream(
+PORTABLE_8439_DECL void chacha20_xor_stream(
         uint8_t * dest, 
         const uint8_t * source, 
         size_t length,
@@ -223,7 +220,7 @@ static void xor_block(uint8_t * dest, const uint8_t * source, const uint32_t * p
     }
 }
 
-static void chacha20_xor_stream(
+void chacha20_xor_stream(
         uint8_t * dest, 
         const uint8_t * source, 
         size_t length,

@@ -39,6 +39,8 @@ extern "C" {
 #define RFC_8439_TAG_SIZE (16)
 #define RFC_8439_KEY_SIZE (32)
 #define RFC_8439_NONCE_SIZE (12)
+#define CHACHA20_KEY_SIZE (32)
+#define CHACHA20_NONCE_SIZE (12)
 
 /*
     Encrypt/Seal plain text bytes into a cipher text that can only be 
@@ -103,6 +105,15 @@ PORTABLE_8439_DECL size_t portable_chacha20_poly1305_decrypt(
     size_t ad_size,  
     const uint8_t * cipher_text,
     size_t cipher_text_size
+);
+
+PORTABLE_8439_DECL void chacha20_xor_stream(
+    uint8_t* dest,
+    const uint8_t* source,
+    size_t length,
+    const uint8_t key[CHACHA20_KEY_SIZE],
+    const uint8_t nonce[CHACHA20_NONCE_SIZE],
+    uint32_t counter
 );
 #if defined(__cplusplus)
 }

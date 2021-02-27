@@ -33,9 +33,6 @@
     <ClCompile Include="crypto\firesaber\firesaber\cbd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="crypto\firesaber\firesaber\fips202.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="crypto\firesaber\firesaber\kem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,12 +57,12 @@
     <ClCompile Include="crypto\init.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="crypto\sha3\sha3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="crypto\common\kem_t.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\common\key_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\chacha20-poly1305\chacha20-poly1305\rfc8439.h">
@@ -87,9 +84,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\firesaber\firesaber\cbd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\firesaber\firesaber\fips202.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\firesaber\firesaber\pack_unpack.h">
@@ -117,6 +111,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\crypto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\sha3\sha3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\common\sync_key_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

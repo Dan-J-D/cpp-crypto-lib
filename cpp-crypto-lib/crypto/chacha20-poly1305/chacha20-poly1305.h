@@ -1,5 +1,6 @@
 #pragma once
 
-#include "../common/key_t.h"
+#include "../common/sync_key_t.h"
 
-key_t* chacha20_poly1305_key();
+sync_key_t* chacha20_poly1305_key();
+sync_key_t* chacha20_key();

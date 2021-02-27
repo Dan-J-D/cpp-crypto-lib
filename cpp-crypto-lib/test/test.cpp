@@ -99,7 +99,7 @@ public:
     }
 
 private:
-    key_t* chacha20;
+    sync_key_t* chacha20;
     kem_t* firesaber;
 
     unsigned char* ss;
@@ -111,15 +111,15 @@ private:
 /// </summary>
 /// <param name="alice">Alice's client</param>
 /// <param name="bob">Bob's client</param>
-/// <returns>return true if successful</returns>
+/// <returns>returns true if successful</returns>
 bool alice_bob_key_exchange(person* alice, person* bob)
 {
     unsigned char* pk = alice->generate_key();
-    if (!pk) return 0;
+    if (!pk) return false;
 
     unsigned char* ct = bob->encapsulate_pk(pk);
     free(pk);
-    if (!ct) return 0;
+    if (!ct) return false;
 
     if (!alice->decapsulate_ct(ct)) return 0;
     free(ct);
@@ -140,12 +140,15 @@ bool alice_bob_send_message(person* alice, person* bob)
     unsigned char* nonce;
     unsigned int size;
     unsigned char* encrypted_message = alice->encrypt_message(msg, strlen((char*)msg) + 1, &nonce, &size);
-    if (!encrypted_message) return 0;
+    if (!encrypted_message) return false;
 
+    std::cout << "encrypted_message" << encrypted_message << std::endl;
     unsigned char* decrypted_message = bob->decrypt_message(encrypted_message, size, nonce);
     free(encrypted_message);
-    if (!decrypted_message) return 0;
+    if (!decrypted_message) return false;
 
+    std::cout << "decrypted_message: " << decrypted_message << std::endl;
+    free(decrypted_message);
     return true;
 }
 
@@ -161,6 +164,11 @@ int main()
     if (!alice_bob_send_message(alice, bob)) return 0;
 
     std::cout << "Successful" << std::endl;
+
+    delete alice;
+    delete bob;
+
+    crypto_uninit();
 
     return 1;
 }

@@ -38,7 +38,7 @@ void gen_rand(std::mt19937& rand, unsigned char* data, unsigned int size)
 void randomize_isaac()
 {
 	std::mt19937 gen = internal_random_seeded();
-	key_t* chacha = chacha20_poly1305_key();
+	sync_key_t* chacha = chacha20_poly1305_key();
 
 	unsigned char* data = (unsigned char*)malloc((RANDSIZL * 4 - chacha->cipher_text_extra_size) + (chacha->key_size) + (chacha->nonce_size) + RANDSIZL * 4);
 

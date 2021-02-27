@@ -3,7 +3,8 @@
 #include <string>
 #include <stdlib.h>
 
-struct key_t
+/* Synchronous Key */
+struct sync_key_t
 {
 	char* name = 0;
 
@@ -15,7 +16,7 @@ struct key_t
 	bool(*Decrypt)(unsigned char* cipher_text, int cipher_text_len, unsigned char* key, unsigned char* nonce, unsigned char* out_plain_text) = 0;
 };
 
-static key_t* new_key()
+static sync_key_t* new_sync_key()
 {
-	return (key_t*)malloc(sizeof(key_t));
+	return (sync_key_t*)malloc(sizeof(sync_key_t));
 }

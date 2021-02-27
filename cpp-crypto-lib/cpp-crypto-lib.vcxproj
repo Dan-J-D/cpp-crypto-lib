@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -144,7 +144,7 @@
     <ClCompile Include="test\test.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\cbd.cpp" />
-    <ClCompile Include="crypto\firesaber\firesaber\fips202.cpp" />
+    <ClCompile Include="crypto\sha3\sha3.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\kem.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\pack_unpack.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\poly.cpp" />
@@ -159,12 +159,12 @@
     <ClInclude Include="crypto\chacha20-poly1305\chacha20-poly1305.h" />
     <ClInclude Include="crypto\chacha20-poly1305\chacha20-poly1305\rfc8439.h" />
     <ClInclude Include="crypto\common\kem_t.h" />
-    <ClInclude Include="crypto\common\key_t.h" />
+    <ClInclude Include="crypto\common\sync_key_t.h" />
     <ClInclude Include="crypto\crypto.h" />
     <ClInclude Include="crypto\firesaber\firesaber.h" />
     <ClInclude Include="crypto\firesaber\firesaber\api.h" />
     <ClInclude Include="crypto\firesaber\firesaber\cbd.h" />
-    <ClInclude Include="crypto\firesaber\firesaber\fips202.h" />
+    <ClInclude Include="crypto\sha3\sha3.h" />
     <ClInclude Include="crypto\firesaber\firesaber\pack_unpack.h" />
     <ClInclude Include="crypto\firesaber\firesaber\poly.h" />
     <ClInclude Include="crypto\firesaber\firesaber\poly_mul.h" />
