@@ -1,4 +1,4 @@
-#include "../../isaac/isaac.h"
+#include "../../rand/rand.h"
 #include "SABER_params.h"
 #include <string.h>
 #include <stdint.h>

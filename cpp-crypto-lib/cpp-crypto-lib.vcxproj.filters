@@ -24,12 +24,6 @@
     <ClCompile Include="crypto\chacha20-poly1305\chacha20-poly1305.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="crypto\isaac\isaac\rand.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="crypto\isaac\isaac.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="crypto\firesaber\firesaber\cbd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,10 +48,10 @@
     <ClCompile Include="crypto\firesaber\firesaber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="crypto\init.cpp">
+    <ClCompile Include="crypto\sha3\sha3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="crypto\sha3\sha3.cpp">
+    <ClCompile Include="crypto\rand\rand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,15 +63,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\chacha20-poly1305\chacha20-poly1305.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\isaac\isaac\rand.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\isaac\isaac\standard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="crypto\isaac\isaac.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\firesaber\firesaber\api.h">
@@ -107,9 +92,6 @@
     <ClInclude Include="crypto\firesaber\firesaber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="crypto\init.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="crypto\crypto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -117,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="crypto\common\sync_key_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\rand\rand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

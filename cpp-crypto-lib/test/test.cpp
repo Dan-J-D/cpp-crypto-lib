@@ -1,10 +1,6 @@
 #include <iostream>
 
 #include "../crypto/crypto.h"
-#include "../crypto/init.h"
-#include "../crypto/chacha20-poly1305/chacha20-poly1305.h"
-#include "../crypto/firesaber/firesaber.h"
-#include "../crypto/isaac/isaac.h"
 
 class person
 {
@@ -76,7 +72,7 @@ public:
     {
         if (!ss) return 0;
         *out_nonce = (unsigned char*)malloc(chacha20->nonce_size);
-        rand_bytes(*out_nonce, chacha20->nonce_size);
+        rand_bytes(*out_nonce, (unsigned long long)chacha20->nonce_size);
         unsigned char* enc_msg = (unsigned char*)malloc(size + chacha20->cipher_text_extra_size);
         if (!chacha20->Encrypt(msg, size, ss, *out_nonce, enc_msg)) { free(out_nonce); free(enc_msg); return 0; };
         *out_size = size + chacha20->cipher_text_extra_size;
@@ -114,6 +110,16 @@ private:
 /// <returns>returns true if successful</returns>
 bool alice_bob_key_exchange(person* alice, person* bob)
 {
+    /*
+    * KEY EXCHANGE
+    * 
+    * Alice generates a secret key and a public key
+    * Alice's public key -> Bob
+    * Bob creates Ciphertext and Shared Secret Key based on Alice's public key
+    * Bob ciphertext -> Alice
+    * Alice creates a shared secret from Bob's ciphertext
+    */
+
     unsigned char* pk = alice->generate_key();
     if (!pk) return false;
 
@@ -154,7 +160,15 @@ bool alice_bob_send_message(person* alice, person* bob)
 
 int main()
 {
-    crypto_init();
+    init_rand_state();
+
+    unsigned char* seed = (unsigned char*)malloc(32);
+    for (int i = 0; i < 32; i++)
+        seed[i] = i;
+
+    seed_rand(seed);
+    get_rand_seed(seed);
+    free(seed);
 
     person* alice = new person();
     person* bob = new person();
@@ -168,7 +182,7 @@ int main()
     delete alice;
     delete bob;
 
-    crypto_uninit();
+    uninit_rand_state();
 
     return 1;
 }

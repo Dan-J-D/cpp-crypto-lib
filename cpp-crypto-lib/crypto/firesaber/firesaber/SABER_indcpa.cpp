@@ -4,7 +4,7 @@
 #include "poly.h"
 #include "pack_unpack.h"
 #include "poly_mul.h"
-#include "../../isaac/isaac.h"
+#include "../../rand/rand.h"
 #include "../../sha3/sha3.h"
 #include "SABER_params.h"
 

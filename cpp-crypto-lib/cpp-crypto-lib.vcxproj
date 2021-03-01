@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="crypto\chacha20-poly1305\chacha20-poly1305.cpp" />
     <ClCompile Include="crypto\chacha20-poly1305\chacha20-poly1305\rfc8439.cpp" />
+    <ClCompile Include="crypto\rand\rand.cpp" />
     <ClCompile Include="test\test.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\cbd.cpp" />
@@ -151,9 +152,6 @@
     <ClCompile Include="crypto\firesaber\firesaber\poly_mul.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\SABER_indcpa.cpp" />
     <ClCompile Include="crypto\firesaber\firesaber\verify.cpp" />
-    <ClCompile Include="crypto\init.cpp" />
-    <ClCompile Include="crypto\isaac\isaac.cpp" />
-    <ClCompile Include="crypto\isaac\isaac\rand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="crypto\chacha20-poly1305\chacha20-poly1305.h" />
@@ -171,10 +169,7 @@
     <ClInclude Include="crypto\firesaber\firesaber\SABER_indcpa.h" />
     <ClInclude Include="crypto\firesaber\firesaber\SABER_params.h" />
     <ClInclude Include="crypto\firesaber\firesaber\verify.h" />
-    <ClInclude Include="crypto\init.h" />
-    <ClInclude Include="crypto\isaac\isaac.h" />
-    <ClInclude Include="crypto\isaac\isaac\rand.h" />
-    <ClInclude Include="crypto\isaac\isaac\standard.h" />
+    <ClInclude Include="crypto\rand\rand.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
