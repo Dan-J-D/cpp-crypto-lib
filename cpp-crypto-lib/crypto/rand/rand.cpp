@@ -88,7 +88,7 @@ void collect_entropy(unsigned char bytes[32])
 	for (unsigned int i = 0; i < 32; i++)
 		bytes[i] ^= ((unsigned char*)&i64)[i % sizeof(i64)];
 
-	// Hardware rand
+	// CPU RDSEED rand
 	for (unsigned int i = 0; i < 32; i++)
 	{
 		if (i % sizeof(i64) == 0)
