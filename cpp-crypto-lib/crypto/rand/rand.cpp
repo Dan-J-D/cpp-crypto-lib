@@ -41,6 +41,7 @@ void seed_rand(unsigned char seed[32])
 {
 	memcpy(state->seed, seed, 32);
 	reseed_rand();
+	reseed_rand();
 }
 
 void reseed_rand()
