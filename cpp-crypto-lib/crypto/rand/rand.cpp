@@ -97,7 +97,7 @@ void collect_entropy(unsigned char bytes[32])
 	}
 
 	// /dev/urandom rand
-#ifdef __linux__
+#if defined(__linux__) || defined(__unix__) || defined(__apple__)
 	std::ifstream urandom("/dev/urandom", std::ios::in | std::ios::binary);
 	if (urandom && urandom.is_open() && urandom.good())
 	{
@@ -110,7 +110,7 @@ void collect_entropy(unsigned char bytes[32])
 #endif
 
 	// rand_s rand
-#ifdef _WIN32
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
 	unsigned int i32 = 0;
 	for (unsigned int i = 0; i < 32; i++)
 	{
