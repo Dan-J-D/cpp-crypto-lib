@@ -97,7 +97,7 @@ void collect_entropy(unsigned char bytes[32])
 	}
 
 	// /dev/urandom rand
-#if defined(__linux__) || defined(__unix__) || defined(__apple__)
+#if defined(__linux__) || defined(__unix__)
 	std::ifstream urandom("/dev/urandom", std::ios::in | std::ios::binary);
 	if (urandom && urandom.is_open() && urandom.good())
 	{
