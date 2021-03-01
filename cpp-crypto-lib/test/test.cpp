@@ -162,14 +162,6 @@ int main()
 {
     init_rand_state();
 
-    unsigned char* seed = (unsigned char*)malloc(32);
-    for (int i = 0; i < 32; i++)
-        seed[i] = i;
-
-    seed_rand(seed);
-    get_rand_seed(seed);
-    free(seed);
-
     person* alice = new person();
     person* bob = new person();
 
