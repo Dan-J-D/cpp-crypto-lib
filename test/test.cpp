@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-#include "../crypto/crypto.h"
+#include "crypto.h"
 
 class person
 {
@@ -177,6 +177,8 @@ int main()
 
     delete alice;
     delete bob;
+
+    uninit_rand_state();
 
     return 1;
 }

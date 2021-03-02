@@ -1,4 +1,4 @@
-#include "../../rand/rand.h"
+#include "rand/rand.h"
 #include "SABER_params.h"
 #include <string.h>
 #include <stdint.h>
@@ -6,7 +6,7 @@
 #include "SABER_indcpa.h"
 #include "api.h"
 #include "verify.h"
-#include "../../sha3/sha3.h"
+#include "sha3/sha3.h"
 
 int crypto_kem_keypair(unsigned char *pk, unsigned char *sk)
 {

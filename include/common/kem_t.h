@@ -15,8 +15,3 @@ struct kem_t
 	bool(*Encapsulate)(unsigned char* out_cipher_text, unsigned char* out_shared_secret, unsigned char* public_key) = 0;
 	bool(*Decapsulate)(unsigned char* out_shared_secret, unsigned char* cipher_text, unsigned char* secret_key) = 0;
 };
-
-static kem_t* new_kem()
-{
-	return (kem_t*)malloc(sizeof(kem_t));
-}

@@ -7,7 +7,7 @@
 
 #include <stdint.h>
 #include <assert.h>
-#include "sha3.h"
+#include "sha3/sha3.h"
 
 #define NROUNDS 24
 #define ROL(a, offset) ((a << offset) ^ (a >> (64 - offset)))

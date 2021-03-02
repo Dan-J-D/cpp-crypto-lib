@@ -1,4 +1,4 @@
-#include "rand.h"
+#include "rand/rand.h"
 #include "../chacha20-poly1305/chacha20-poly1305/rfc8439.h"
 
 #define _CRT_RAND_S
@@ -67,6 +67,7 @@ void rand_bytes(unsigned char* bytes, unsigned int size)
 #elif defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
 #include <intrin.h>
 #include <Windows.h>
+#include <sysinfoapi.h>
 #endif
 
 void collect_entropy(unsigned char bytes[32])
@@ -130,7 +131,7 @@ void collect_entropy(unsigned char bytes[32])
 			if (rand_s(&i32) != 0) break;
 		bytes[i] ^= ((unsigned char*)&i32)[i % sizeof(i32)];
 	}
-
+	
 	// uptime rand
 	i64 = GetTickCount64();
 	for (unsigned int i = 0; i < 32; i++)

@@ -1,4 +1,4 @@
-#include "chacha20-poly1305.h"
+#include "chacha20-poly1305/chacha20-poly1305.h"
 
 #include "chacha20-poly1305/rfc8439.h"
 
@@ -26,7 +26,7 @@ bool chacha20_decrypt(unsigned char* cipher_text, int cipher_text_len, unsigned 
 
 sync_key_t* chacha20_poly1305_key()
 {
-	sync_key_t* k = new_sync_key();
+	sync_key_t* k = new sync_key_t();
 	k->name = (char*)"chacha20-poly1305";
 	k->key_size = RFC_8439_KEY_SIZE;
 	k->nonce_size = RFC_8439_NONCE_SIZE;
@@ -38,7 +38,7 @@ sync_key_t* chacha20_poly1305_key()
 
 sync_key_t* chacha20_key()
 {
-	sync_key_t* k = new_sync_key();
+	sync_key_t* k = new sync_key_t();
 	k->name = (char*)"chacha20";
 	k->key_size = CHACHA20_KEY_SIZE;
 	k->nonce_size = CHACHA20_NONCE_SIZE;

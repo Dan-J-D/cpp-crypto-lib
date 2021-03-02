@@ -1,4 +1,4 @@
-#include "firesaber.h"
+#include "firesaber/firesaber.h"
 #include "firesaber/api.h"
 
 bool GenerateKey(unsigned char* out_public_key, unsigned char* out_secret_key)
@@ -18,7 +18,7 @@ bool Decapsulate(unsigned char* out_shared_secret, unsigned char* cipher_text, u
 
 kem_t* firesaber_kem()
 {
-	kem_t* k = new_kem();
+	kem_t* k = new kem_t();
 	k->name = (char*)"FireSaber";
 	k->secret_key_len = SABER_SECRETKEYBYTES;
 	k->public_key_len = SABER_PUBLICKEYBYTES;

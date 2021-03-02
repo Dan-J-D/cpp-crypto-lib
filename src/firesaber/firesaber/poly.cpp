@@ -4,7 +4,7 @@
 #include "poly_mul.h"
 #include "pack_unpack.h"
 #include "cbd.h"
-#include "../../sha3/sha3.h"
+#include "sha3/sha3.h"
 
 void MatrixVectorMul(const uint16_t A[SABER_L][SABER_L][SABER_N], const uint16_t s[SABER_L][SABER_N], uint16_t res[SABER_L][SABER_N], int16_t transpose)
 {
