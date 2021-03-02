@@ -149,7 +149,10 @@ bool alice_bob_send_message(person* alice, person* bob)
     unsigned char* encrypted_message = alice->encrypt_message(msg, strlen((char*)msg) + 1, &nonce, &size);
     if (!encrypted_message) return false;
 
-    std::cout << "encrypted_message" << encrypted_message << std::endl;
+    std::cout << "encrypted_message: " << std::hex;
+    for (unsigned int i = 0; i < size; i++)
+        std::cout << (unsigned int)encrypted_message[i] << ' ';
+    std::cout << std::dec << std::endl;
     unsigned char* decrypted_message = bob->decrypt_message(encrypted_message, size, nonce);
     free(encrypted_message);
     if (!decrypted_message) return false;
