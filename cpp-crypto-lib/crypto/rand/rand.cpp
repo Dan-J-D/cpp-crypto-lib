@@ -6,7 +6,6 @@
 #include <memory>
 #include <chrono>
 #include <immintrin.h>
-#include <intrin.h>
 
 typedef struct _rand_state
 {
@@ -72,8 +71,11 @@ void rand_bytes(unsigned char* bytes, unsigned int size)
 	reseed_rand();
 }
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__unix__)
 #include <fstream>
+#include <x86intrin.h>
+#elif defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
+#include <intrin.h>
 #endif
 
 void collect_entropy(unsigned char bytes[32])
@@ -96,8 +98,8 @@ void collect_entropy(unsigned char bytes[32])
 		bytes[i] ^= ((unsigned char*)&i64)[i % sizeof(i64)];
 	}
 
-	// /dev/urandom rand
 #if defined(__linux__) || defined(__unix__)
+	// /dev/urandom rand
 	std::ifstream urandom("/dev/urandom", std::ios::in | std::ios::binary);
 	if (urandom && urandom.is_open() && urandom.good())
 	{
@@ -109,8 +111,8 @@ void collect_entropy(unsigned char bytes[32])
 	}
 #endif
 
-	// rand_s rand
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined(_WIN64)
+	// rand_s rand
 	unsigned int i32 = 0;
 	for (unsigned int i = 0; i < 32; i++)
 	{
