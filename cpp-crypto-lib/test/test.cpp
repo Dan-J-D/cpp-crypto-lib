@@ -75,7 +75,7 @@ public:
         *out_nonce = (unsigned char*)malloc(chacha20->nonce_size);
         rand_bytes(*out_nonce, (unsigned long long)chacha20->nonce_size);
         unsigned char* enc_msg = (unsigned char*)malloc(size + chacha20->cipher_text_extra_size);
-        if (!chacha20->Encrypt(msg, size, ss, *out_nonce, enc_msg)) { free(out_nonce); free(enc_msg); return 0; };
+        if (!chacha20->Encrypt(msg, size, ss, *out_nonce, enc_msg)) { free(*out_nonce); free(enc_msg); return 0; };
         *out_size = size + chacha20->cipher_text_extra_size;
         return enc_msg;
     }
