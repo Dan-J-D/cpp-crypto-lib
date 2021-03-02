@@ -178,7 +178,5 @@ int main()
     delete alice;
     delete bob;
 
-    uninit_rand_state();
-
     return 1;
 }
