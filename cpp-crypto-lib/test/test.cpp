@@ -166,7 +166,7 @@ int main()
 {
     init_rand_state();
 
-    person* alice = new person();
+    /*person* alice = new person();
     person* bob = new person();
 
     if (!alice_bob_key_exchange(alice, bob)) return 0;
@@ -176,7 +176,7 @@ int main()
     std::cout << "Successful" << std::endl;
 
     delete alice;
-    delete bob;
+    delete bob;*/
 
     return 1;
 }
