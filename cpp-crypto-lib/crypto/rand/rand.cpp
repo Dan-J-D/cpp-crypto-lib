@@ -4,6 +4,7 @@
 #define _CRT_RAND_S
 #include <cstdlib>
 #include <memory>
+#include <memory.h>
 #include <chrono>
 #include <immintrin.h>
 
