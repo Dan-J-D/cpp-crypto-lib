@@ -1,0 +1,3 @@
+#!/bin/sh
+
+g++ -march=native -O3 ./cpp-crypto-lib/test/test.cpp ./cpp-crypto-lib/crypto/rand/rand.cpp ./cpp-crypto-lib/crypto/sha3/sha3.cpp ./cpp-crypto-lib/crypto/chacha20-poly1305/chacha20-poly1305.cpp ./cpp-crypto-lib/crypto/chacha20-poly1305/chacha20-poly1305/rfc8439.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/poly_mul.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/pack_unpack.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/cbd.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/poly.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/SABER_indcpa.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/verify.cpp ./cpp-crypto-lib/crypto/firesaber/firesaber/kem.cpp -o build
