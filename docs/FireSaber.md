@@ -10,4 +10,4 @@
 |          1312          |          3040          |          1472          |             32            |
 
 ## License
-[LISCENSE](https://github.com/KULeuven-COSIC/SABER/blob/master/LICENSE)
+[LICENSE](https://github.com/KULeuven-COSIC/SABER/blob/master/LICENSE)
